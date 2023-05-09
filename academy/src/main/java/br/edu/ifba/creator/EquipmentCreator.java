@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public abstract class EquipmentCreator {
 
-    String loadConf(String name) throws FileNotFoundException, IOException {
+    private static String loadConf(String name) throws FileNotFoundException, IOException {
         Properties prop = new Properties();
         prop.load(new FileInputStream("src/main/resources/factory.conf"));
         for(Object key : prop.keySet())
@@ -19,13 +19,12 @@ public abstract class EquipmentCreator {
         return null;
     }
 
-    public void getEquipmentWithProp(String name) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, ClassNotFoundException, FileNotFoundException, IOException {
+    public static EquipmentCreator getEquipmentWithProp(String name) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, ClassNotFoundException, FileNotFoundException, IOException {
         String className = loadConf(name);
-        EquipmentCreator creator = (EquipmentCreator)
+        return (EquipmentCreator)
                 Class.forName(className)
                         .getConstructor()
                         .newInstance();
-        creator.usingEquipment();
     }
 
     void usingEquipment(){
