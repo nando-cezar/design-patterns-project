@@ -13,11 +13,9 @@ public abstract class Equipment {
     public String getIdentifier() {
         return identifier;
     }
-
     public int getQuantity() {
         return quantity;
     }
-
     public void setQuantity(int quantity){
         this.quantity = quantity;
     }

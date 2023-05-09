@@ -3,8 +3,8 @@ package br.edu.ifba.product.equipment;
 public final class Machine extends Equipment {
 
     private static Machine instance;
-    private  String description;
-    private  String brand;
+    private final String description;
+    private final String brand;
 
     private Machine(String description, String brand, String identifier, int quantity) {
         super(identifier, quantity);
@@ -13,13 +13,13 @@ public final class Machine extends Equipment {
     }
 
     public static Machine getInstance(String description, String brand, String identifier, int quantity){
-        if(instance != null)
-            if(instance.getIdentifier().equals(identifier)) {
-                instance.setQuantity(quantity);
-                return instance;
-            }
+        if(instance == null)
+            instance = new Machine(description, brand, identifier, quantity);
 
-        return new Machine(description, brand, identifier, quantity);
+        if(instance.getIdentifier().equals(identifier))
+            instance.setQuantity(quantity);
+
+        return instance;
     }
 
 

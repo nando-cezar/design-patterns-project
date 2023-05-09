@@ -1,16 +1,24 @@
 package br.edu.ifba.product.equipment;
 
-import br.edu.ifba.product.equipment.Equipment;
-
 public class Accessory extends Equipment {
 
+    private static Accessory instance;
     private final String description;
 
-    public Accessory(String description, String identifier, int quantity) {
+    private Accessory(String description, String identifier, int quantity) {
         super(identifier, quantity);
         this.description = description;
     }
 
+    public static Accessory getInstance(String description, String identifier, int quantity){
+        if(instance == null)
+            instance = new Accessory(description, identifier, quantity);
+
+        if(instance.getIdentifier().equals(identifier))
+            instance.setQuantity(quantity);
+
+        return instance;
+    }
     public String getDescription() {
         return description;
     }

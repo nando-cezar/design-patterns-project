@@ -1,22 +1,25 @@
 package br.edu.ifba;
 
-import br.edu.ifba.creator.Performance;
-import br.edu.ifba.creator.PerformanceCardioImpl;
-import br.edu.ifba.product.equipment.Equipment;
-import br.edu.ifba.product.exercises.Exercises;
+import br.edu.ifba.creator.EquipmentCreator;
+import br.edu.ifba.creator.MachineConcreteCreator;
 
-import java.util.List;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public class Demo {
-    public static void main(String[] args) {
+
+    private static EquipmentCreator create;
+    public static void main(String[] args) throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         System.out.println("Initializer...");
-        Performance performance = new PerformanceCardioImpl();
+        configure();
+        runBusinessLogic();
+    }
 
-        Equipment equipment = performance.createEquipament();
-        List<Exercises> exercises = performance.createExercises();
+    private static void configure(){
+        create = new MachineConcreteCreator("Esteira", "XPTO", "XPTO123", 1000);
+    }
 
-        equipment.toUse();
-        exercises.forEach(Exercises::toExecute);
-
+    private static void runBusinessLogic() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        create.getEquipmentWithProp("Machine");
     }
 }
