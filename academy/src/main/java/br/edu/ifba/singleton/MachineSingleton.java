@@ -1,7 +1,7 @@
 package br.edu.ifba.singleton;
 
-import br.edu.ifba.product.equipment.Equipment;
-import br.edu.ifba.product.equipment.Machine;
+import br.edu.ifba.factoryMethod.product.equipment.Equipment;
+import br.edu.ifba.factoryMethod.product.equipment.Machine;
 
 public class MachineSingleton extends EquipmentSingleton{
     @Override

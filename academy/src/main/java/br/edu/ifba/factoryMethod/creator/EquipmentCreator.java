@@ -1,6 +1,6 @@
-package br.edu.ifba.creator;
+package br.edu.ifba.factoryMethod.creator;
 
-import br.edu.ifba.product.equipment.Equipment;
+import br.edu.ifba.factoryMethod.product.equipment.Equipment;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

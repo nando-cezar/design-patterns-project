@@ -1,7 +1,7 @@
-package br.edu.ifba.creator;
+package br.edu.ifba.factoryMethod.creator;
 
-import br.edu.ifba.product.equipment.Dumbbell;
-import br.edu.ifba.product.equipment.Equipment;
+import br.edu.ifba.factoryMethod.product.equipment.Dumbbell;
+import br.edu.ifba.factoryMethod.product.equipment.Equipment;
 
 public class DumbbellConcreteCreator extends EquipmentCreator {
 

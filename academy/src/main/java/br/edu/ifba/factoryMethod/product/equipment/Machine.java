@@ -1,4 +1,4 @@
-package br.edu.ifba.product.equipment;
+package br.edu.ifba.factoryMethod.product.equipment;
 
 public final class Machine extends Equipment {
 
@@ -38,6 +38,6 @@ public final class Machine extends Equipment {
 
     @Override
     public void toUse() {
-        System.out.println("Using machine ['" + brand + " | "+ description + "']");
+        System.out.println("Using machine ['" + super.getIdentifier() + " | " + brand + " | " + description + " | " + super.getQuantity() + "']");
     }
 }

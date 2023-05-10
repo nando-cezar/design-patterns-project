@@ -1,4 +1,4 @@
-package br.edu.ifba.product.equipment;
+package br.edu.ifba.factoryMethod.product.equipment;
 
 public class Dumbbell extends Equipment {
 
@@ -28,6 +28,6 @@ public class Dumbbell extends Equipment {
 
     @Override
     public void toUse() {
-        System.out.println("Using dumbbell");
+        System.out.println("Using machine ['" + super.getIdentifier() + " | " + weight + " | " + super.getQuantity() + "']");
     }
 }

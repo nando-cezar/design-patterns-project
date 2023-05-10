@@ -1,7 +1,7 @@
 package br.edu.ifba.singleton;
 
-import br.edu.ifba.creator.EquipmentCreator;
-import br.edu.ifba.product.equipment.Equipment;
+import br.edu.ifba.factoryMethod.creator.EquipmentCreator;
+import br.edu.ifba.factoryMethod.product.equipment.Equipment;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -10,7 +10,7 @@ public abstract class EquipmentSingleton {
 
     private static Equipment instance;
 
-    public void newInstance(String equipmentType, String identifier, int quantity, String ...args)
+    public Equipment newInstance(String equipmentType, String identifier, int quantity, String ...args)
             throws IOException,
             ClassNotFoundException,
             InvocationTargetException,
@@ -21,17 +21,19 @@ public abstract class EquipmentSingleton {
         EquipmentCreator creator = EquipmentCreator.getEquipmentWithProp(equipmentType);
         Equipment product = creator.usingEquipment(identifier, quantity);
 
-        if(instance != null && instance.getIdentifier().equals(identifier)){
-            instance.setQuantity(quantity);
-            instance.toUse();
-        }
-
-        if(instance == null){
+        if(instance != null){
+            if(instance.getIdentifier().equals(identifier)){
+                instance.incrementQuantity(quantity);
+            }else{
+                setAttributes(product, args);
+                instance = product;
+            }
+        }else{
             setAttributes(product, args);
             instance = product;
-            instance.toUse();
         }
 
+        return instance;
     }
 
     public abstract void setAttributes(Equipment product, String ...args);

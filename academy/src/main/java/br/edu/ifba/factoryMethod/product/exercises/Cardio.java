@@ -1,4 +1,4 @@
-package br.edu.ifba.product.exercises;
+package br.edu.ifba.factoryMethod.product.exercises;
 
 import java.util.List;
 

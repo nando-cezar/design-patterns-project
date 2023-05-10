@@ -1,4 +1,4 @@
-package br.edu.ifba.product.equipment;
+package br.edu.ifba.factoryMethod.product.equipment;
 
 public class Accessory extends Equipment {
 
@@ -28,6 +28,6 @@ public class Accessory extends Equipment {
 
     @Override
     public void toUse() {
-        System.out.println("Using accessory");
+        System.out.println("Using machine ['" + super.getIdentifier() + " | " + description + " | " + super.getQuantity() + "']");
     }
 }

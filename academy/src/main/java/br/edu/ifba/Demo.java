@@ -1,5 +1,6 @@
 package br.edu.ifba;
 
+import br.edu.ifba.singleton.DumbbellSingleton;
 import br.edu.ifba.singleton.EquipmentSingleton;
 import br.edu.ifba.singleton.MachineSingleton;
 
@@ -14,13 +15,32 @@ public class Demo {
     }
 
     private static void runBusinessLogic() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        EquipmentSingleton singleton = new MachineSingleton();
-        String[] args = {"Brand machine", "Description machine"};
-        singleton.newInstance(
+        EquipmentSingleton machineSingleton = new MachineSingleton();
+        EquipmentSingleton dumbbellSingleton = new DumbbellSingleton();
+
+        String[] machineArgs = {"Brand machine", "Description machine"};
+
+        String[] dumbbellArgs = {"100"};
+
+        machineSingleton.newInstance(
                 "Machine",
-                "XPTO",
+                "MAC",
                 5,
-                args
-        );
+                machineArgs
+        ).toUse();
+
+        machineSingleton.newInstance(
+                "Machine",
+                "MAC",
+                5,
+                machineArgs
+        ).toUse();
+
+        dumbbellSingleton.newInstance(
+                "Dumbbell",
+                "DUMB",
+                3,
+                dumbbellArgs
+        ).toUse();
     }
 }

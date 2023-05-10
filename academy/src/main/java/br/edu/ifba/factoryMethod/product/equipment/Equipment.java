@@ -1,4 +1,4 @@
-package br.edu.ifba.product.equipment;
+package br.edu.ifba.factoryMethod.product.equipment;
 
 public abstract class Equipment {
 
@@ -29,6 +29,10 @@ public abstract class Equipment {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public void incrementQuantity(int quantity) {
+        this.quantity += quantity;
     }
 
     public abstract void toUse();

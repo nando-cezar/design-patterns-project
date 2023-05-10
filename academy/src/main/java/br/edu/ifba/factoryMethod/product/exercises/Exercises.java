@@ -1,6 +1,4 @@
-package br.edu.ifba.product.exercises;
-
-import br.edu.ifba.product.equipment.Equipment;
+package br.edu.ifba.factoryMethod.product.exercises;
 
 import java.util.List;
 
