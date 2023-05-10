@@ -5,21 +5,11 @@ import br.edu.ifba.product.equipment.Machine;
 
 public class MachineConcreteCreator extends EquipmentCreator {
 
-    private final String description;
-    private final String brand;
-    private final String identifier;
-    private final int quantity;
-
-    public MachineConcreteCreator() {
-        this.description = "Esteira";
-        this.brand = "XPTO";
-        this.identifier = "XPTO123";
-        this.quantity = 1000;
-    }
+    public MachineConcreteCreator() {}
     @Override
     public Equipment createEquipament() {
-        System.out.println("Create equipment.");
-        return Machine.getInstance(description, brand, identifier, quantity);
+        System.out.println("Machine: Create equipment.");
+        return new Machine();
     }
 
 }

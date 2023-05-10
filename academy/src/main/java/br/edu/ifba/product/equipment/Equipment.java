@@ -2,8 +2,13 @@ package br.edu.ifba.product.equipment;
 
 public abstract class Equipment {
 
-    private final String identifier;
+    private String identifier;
     private int quantity;
+
+    public Equipment() {
+        this.identifier = null;
+        this.quantity = 0;
+    }
 
     public Equipment(String identifier, int quantity) {
         this.identifier = identifier;
@@ -13,11 +18,18 @@ public abstract class Equipment {
     public String getIdentifier() {
         return identifier;
     }
+
     public int getQuantity() {
         return quantity;
     }
-    public void setQuantity(int quantity){
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
     public abstract void toUse();
 }

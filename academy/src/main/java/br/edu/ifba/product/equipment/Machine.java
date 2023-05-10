@@ -3,28 +3,41 @@ package br.edu.ifba.product.equipment;
 public final class Machine extends Equipment {
 
     private static Machine instance;
-    private final String description;
-    private final String brand;
+    private String description;
+    private String brand;
 
-    private Machine(String description, String brand, String identifier, int quantity) {
+    public Machine() {
+        super();
+    }
+
+    public Machine(String identifier, int quantity) {
+        this(identifier, quantity, null, null);
+    }
+
+    public Machine(String identifier, int quantity, String description, String brand) {
         super(identifier, quantity);
         this.description = description;
         this.brand = brand;
     }
 
-    public static Machine getInstance(String description, String brand, String identifier, int quantity){
-        if(instance == null)
-            instance = new Machine(description, brand, identifier, quantity);
-
-        if(instance.getIdentifier().equals(identifier))
-            instance.setQuantity(quantity);
-
-        return instance;
+    public String getDescription() {
+        return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
     @Override
     public void toUse() {
-        System.out.println("Using machine '" + description + "'...");
+        System.out.println("Using machine ['" + brand + " | "+ description + "']");
     }
 }

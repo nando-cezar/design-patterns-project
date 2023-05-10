@@ -27,9 +27,11 @@ public abstract class EquipmentCreator {
                         .newInstance();
     }
 
-    void usingEquipment(){
+    public Equipment usingEquipment(String identifier, int quantity){
         Equipment equipment = createEquipament();
-        equipment.toUse();
+        equipment.setIdentifier(identifier);
+        equipment.setQuantity(quantity);
+        return equipment;
     }
 
     public abstract Equipment createEquipament();

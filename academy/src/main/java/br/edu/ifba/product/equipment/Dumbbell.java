@@ -3,21 +3,23 @@ package br.edu.ifba.product.equipment;
 public class Dumbbell extends Equipment {
 
     private static Dumbbell instance;
-    private final double weight;
+    private double weight;
 
-    private Dumbbell(double weight, String identifier, int quantity) {
+    public Dumbbell() {
+        super();
+    }
+
+    public Dumbbell(String identifier, int quantity) {
+        this(identifier, quantity, 0.0);
+    }
+
+    public Dumbbell(String identifier, int quantity, double weight) {
         super(identifier, quantity);
         this.weight = weight;
     }
 
-    public static Dumbbell getInstance(double weight, String identifier, int quantity){
-        if(instance == null)
-            instance = new Dumbbell(weight, identifier, quantity);
-
-        if(instance.getIdentifier().equals(identifier))
-            instance.setQuantity(quantity);
-
-        return instance;
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     public double getWeight() {

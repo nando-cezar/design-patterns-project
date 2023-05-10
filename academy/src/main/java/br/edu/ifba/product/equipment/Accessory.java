@@ -3,22 +3,25 @@ package br.edu.ifba.product.equipment;
 public class Accessory extends Equipment {
 
     private static Accessory instance;
-    private final String description;
+    private String description;
 
-    private Accessory(String description, String identifier, int quantity) {
+    public Accessory() {
+        super();
+    }
+
+    public Accessory(String identifier, int quantity) {
+        this(identifier, quantity, null);
+    }
+
+    public Accessory(String identifier, int quantity, String description) {
         super(identifier, quantity);
         this.description = description;
     }
 
-    public static Accessory getInstance(String description, String identifier, int quantity){
-        if(instance == null)
-            instance = new Accessory(description, identifier, quantity);
-
-        if(instance.getIdentifier().equals(identifier))
-            instance.setQuantity(quantity);
-
-        return instance;
+    public void setDescription(String description) {
+        this.description = description;
     }
+
     public String getDescription() {
         return description;
     }
