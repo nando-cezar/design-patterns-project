@@ -2,7 +2,6 @@ package br.edu.ifba.factoryMethod.product.equipment;
 
 public class Accessory extends Equipment {
 
-    private static Accessory instance;
     private String description;
 
     public Accessory() {
@@ -20,10 +19,6 @@ public class Accessory extends Equipment {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     @Override

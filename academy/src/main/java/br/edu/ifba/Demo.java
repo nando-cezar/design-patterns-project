@@ -12,6 +12,7 @@ public class Demo {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         System.out.println("Initializer...");
         runBusinessLogic();
+        System.out.println("Finished!");
     }
 
     private static void runBusinessLogic() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {

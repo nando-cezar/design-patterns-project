@@ -2,7 +2,6 @@ package br.edu.ifba.factoryMethod.product.equipment;
 
 public final class Machine extends Equipment {
 
-    private static Machine instance;
     private String description;
     private String brand;
 
@@ -20,16 +19,8 @@ public final class Machine extends Equipment {
         this.brand = brand;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getBrand() {
-        return brand;
     }
 
     public void setBrand(String brand) {

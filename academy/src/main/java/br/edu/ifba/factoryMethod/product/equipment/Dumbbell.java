@@ -2,7 +2,6 @@ package br.edu.ifba.factoryMethod.product.equipment;
 
 public class Dumbbell extends Equipment {
 
-    private static Dumbbell instance;
     private double weight;
 
     public Dumbbell() {
@@ -20,10 +19,6 @@ public class Dumbbell extends Equipment {
 
     public void setWeight(double weight) {
         this.weight = weight;
-    }
-
-    public double getWeight() {
-        return weight;
     }
 
     @Override

@@ -1,8 +1,10 @@
-package br.edu.ifba.factoryMethod.product.exercises;
+package br.edu.ifba.builder.product;
+
+import br.edu.ifba.builder.product.exercises.Type;
 
 import java.util.List;
 
-public abstract class Exercises {
+public class Exercises {
 
     private final String description;
     private final List<Type> type;
@@ -26,5 +28,4 @@ public abstract class Exercises {
         return muscleGroup;
     }
 
-    public abstract void toExecute();
 }

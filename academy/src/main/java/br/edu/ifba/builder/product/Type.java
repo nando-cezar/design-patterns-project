@@ -1,4 +1,4 @@
-package br.edu.ifba.factoryMethod.product.exercises;
+package br.edu.ifba.builder.product.exercises;
 
 public enum Type {
     Resistido,
