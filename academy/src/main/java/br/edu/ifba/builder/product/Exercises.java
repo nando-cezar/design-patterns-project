@@ -28,4 +28,12 @@ public class Exercises {
         return muscleGroup;
     }
 
+    @Override
+    public String toString() {
+        return "Exercises{" +
+                "description='" + description + '\'' +
+                ", type=" + type +
+                ", muscleGroup=" + muscleGroup +
+                '}';
+    }
 }

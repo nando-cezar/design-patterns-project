@@ -1,5 +1,7 @@
 package br.edu.ifba;
 
+import br.edu.ifba.builder.concrete.EquipmentConcreteBuilder;
+import br.edu.ifba.builder.director.ExercisesDirector;
 import br.edu.ifba.singleton.DumbbellSingleton;
 import br.edu.ifba.singleton.EquipmentSingleton;
 import br.edu.ifba.singleton.MachineSingleton;
@@ -43,5 +45,11 @@ public class Demo {
                 3,
                 dumbbellArgs
         ).toUse();
+
+        System.out.println("Builder execution...");
+        ExercisesDirector director = new ExercisesDirector();
+        EquipmentConcreteBuilder concreteBuilder = new EquipmentConcreteBuilder();
+        director.constructEquiment(concreteBuilder);
+        System.out.println(concreteBuilder.builder());
     }
 }
