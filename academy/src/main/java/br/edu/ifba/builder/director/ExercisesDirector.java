@@ -2,6 +2,7 @@ package br.edu.ifba.builder.director;
 
 import br.edu.ifba.builder.concrete.EquipmentBuilder;
 
+
 import java.util.List;
 
 public class ExercisesDirector {

@@ -1,4 +1,4 @@
-package br.edu.ifba.factoryMethod.product.equipment;
+package br.edu.ifba.factoryMethod.product;
 
 public abstract class Equipment {
 

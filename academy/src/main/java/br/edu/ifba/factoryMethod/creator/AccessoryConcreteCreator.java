@@ -1,7 +1,7 @@
 package br.edu.ifba.factoryMethod.creator;
 
-import br.edu.ifba.factoryMethod.product.equipment.Accessory;
-import br.edu.ifba.factoryMethod.product.equipment.Equipment;
+import br.edu.ifba.factoryMethod.product.Accessory;
+import br.edu.ifba.factoryMethod.product.Equipment;
 
 public class AccessoryConcreteCreator extends EquipmentCreator {
 

@@ -1,7 +1,7 @@
 package br.edu.ifba.singleton;
 
 import br.edu.ifba.factoryMethod.creator.EquipmentCreator;
-import br.edu.ifba.factoryMethod.product.equipment.Equipment;
+import br.edu.ifba.factoryMethod.product.Equipment;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
