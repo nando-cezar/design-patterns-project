@@ -1,0 +1,3 @@
+Maquina = br.edu.ifba.inf011.factory.MaquinaFactory
+Acessorio = br.edu.ifba.inf011.factory.AcessorioFactory
+Halteres = br.edu.ifba.inf011.factory.HalteresFactory
