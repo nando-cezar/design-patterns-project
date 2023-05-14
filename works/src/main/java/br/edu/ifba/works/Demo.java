@@ -1,10 +1,10 @@
 package br.edu.ifba.works;
 
-import br.edu.ifba.works.abstractFactory.factory.AlbumHtmlCompleteContreteFactory;
-import br.edu.ifba.works.abstractFactory.factory.ConfigurationAbstractFactory;
-import br.edu.ifba.works.abstractFactory.factory.HtmlSummedUpContreteFactory;
+import br.edu.ifba.works.abstractFactory.factory.*;
 import br.edu.ifba.works.abstractFactory.product.content.AlbumHtmlComplete;
+import br.edu.ifba.works.abstractFactory.product.content.AlbumLatexComplete;
 import br.edu.ifba.works.abstractFactory.product.content.HtmlSummedUp;
+import br.edu.ifba.works.abstractFactory.product.content.LatexSummedUp;
 import br.edu.ifba.works.factoryMethod.creator.WorksCreator;
 import br.edu.ifba.works.factoryMethod.product.Album;
 import br.edu.ifba.works.factoryMethod.product.Book;
@@ -64,7 +64,7 @@ public class Demo {
         System.out.println("\nAbstract factory in execution...");
 
         WorksCreator creator = WorksCreator.getEquipmentWithProp("Album");
-        Works product = creator.getWorks("Title", 2030, 20.00);
+        Works product = creator.getWorks("Title Album", 2030, 20.00);
 
         var album = (Album) product;
         album.setRecordCompany("XPTO Record Company");
@@ -72,7 +72,9 @@ public class Demo {
         album.setAuthor("XPTO Author");
         album.setDuration(30.0);
 
-        ConfigurationAbstractFactory conf = new AlbumHtmlCompleteContreteFactory();
+        ConfigurationAbstractFactory conf;
+
+        conf = new AlbumHtmlCompleteContreteFactory();
         var dataContentAlbumHtml = (AlbumHtmlComplete) conf.createContentModel(album);
         var dataExtention = conf.createContentExtention();
         dataExtention.buildingStruture(List.of(dataContentAlbumHtml));
@@ -84,6 +86,23 @@ public class Demo {
         dataContentAlbumHtmlSummedUp.setAuthor(album.getAuthor());
         dataExtention = conf.createContentExtention();
         dataExtention.buildingStruture(List.of(dataContentAlbumHtmlSummedUp));
+
+        System.out.println();
+
+        conf = new AlbumLatexCompleteContreteFactory();
+        var dataContentAlbumLatex = (AlbumLatexComplete) conf.createContentModel(album);
+        dataExtention = conf.createContentExtention();
+        dataExtention.buildingStruture(List.of(dataContentAlbumLatex));
+
+        System.out.println();
+
+        conf = new LatexSummedUpContreteFactory();
+        var dataContentAlbumLatexSummedUp = (LatexSummedUp) conf.createContentModel(album);
+        dataContentAlbumLatexSummedUp.setAuthor(album.getAuthor());
+        dataContentAlbumLatexSummedUp.setTitle(album.getTitle());
+        dataContentAlbumLatexSummedUp.setYear(album.getYear());
+        dataExtention = conf.createContentExtention();
+        dataExtention.buildingStruture(List.of(dataContentAlbumLatexSummedUp));
 
     }
 }

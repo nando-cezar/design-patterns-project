@@ -17,18 +17,30 @@ public class LatexSummedUp implements ContentModel {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getAuthor() {
         return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public Integer getYear() {
         return year;
     }
 
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
     @Override
     public String buildingContent() {
         return "% " + this.getTitle() + "\n" +
                 "\"textbf {" + this.getTitle() + "}\n" +
-                "\"emph {" + this.getAuthor() + " (" + this.getYear() + ") }\n";
+                "\"emph {" + this.getAuthor() + " (" + this.getYear() + ")}\n";
     }
 }
