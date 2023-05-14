@@ -1,5 +1,6 @@
 package br.edu.ifba.works.factoryMethod.creator;
 
+
 import br.edu.ifba.works.factoryMethod.product.Album;
 import br.edu.ifba.works.factoryMethod.product.Works;
 

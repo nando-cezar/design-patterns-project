@@ -1,6 +1,6 @@
 package br.edu.ifba.works.factoryMethod.product;
 
-public class Book extends Works{
+public class Book extends Works {
 
     private String publishingCompany;
     private String language;
@@ -62,10 +62,10 @@ public class Book extends Works{
                         "\t\t 'title': '" + super.getTitle() + "'\n" +
                         "\t\t 'year': '" + super.getYear() + "'\n" +
                         "\t\t 'score': '" + super.getScore() + "'\n" +
-                        "\t\t 'publishingCompany': '" + publishingCompany + "'\n" +
-                        "\t\t 'language': '" + language + "'\n" +
-                        "\t\t 'author': '" + author + "'\n" +
-                        "\t\t 'pageNumbers': '" + pageNumbers + "'\n" +
+                        "\t\t 'publishingCompany': '" + this.getPublishingCompany() + "'\n" +
+                        "\t\t 'language': '" + this.getLanguage() + "'\n" +
+                        "\t\t 'author': '" + this.getAuthor() + "'\n" +
+                        "\t\t 'pageNumbers': '" + this.getPageNumbers() + "'\n" +
                     "\t}\n" +
                 '}'
         );

@@ -1,6 +1,6 @@
 package br.edu.ifba.works.factoryMethod.product;
 
-public class Album extends Works{
+public class Album extends Works {
 
     private String recordCompany;
     private String studio;
@@ -62,10 +62,10 @@ public class Album extends Works{
                         "\t\t 'title': '" + super.getTitle() + "'\n" +
                         "\t\t 'year': '" + super.getYear() + "'\n" +
                         "\t\t 'score': '" + super.getScore() + "'\n" +
-                        "\t\t 'recordCompany': '" + recordCompany + "'\n" +
-                        "\t\t 'studio': '" + studio + "'\n" +
-                        "\t\t 'author': '" + author + "'\n" +
-                        "\t\t 'duration': '" + duration + "'\n" +
+                        "\t\t 'recordCompany': '" + this.getRecordCompany() + "'\n" +
+                        "\t\t 'studio': '" + this.getStudio() + "'\n" +
+                        "\t\t 'author': '" + this.getAuthor() + "'\n" +
+                        "\t\t 'duration': '" + this.getDuration() + "'\n" +
                         "\t}\n" +
                         '}'
         );
@@ -75,11 +75,11 @@ public class Album extends Works{
     public void toXML() {
         System.out.println(
                 "<book title = " + super.getTitle() + " year = " + super.getYear() + ">\n" +
-                        "\t<score>" + 4.6 + "</score>\n" +
-                        "\t<recordCompany>" + recordCompany + "</recordCompany>\n" +
-                        "\t<studio>" + studio + "</studio>\n" +
-                        "\t<author>" + author + "</author>\n" +
-                        "\t<duration>" + duration + "</duration>\n" +
+                        "\t<score>" + this.getScore() + "</score>\n" +
+                        "\t<recordCompany>" + this.getRecordCompany() + "</recordCompany>\n" +
+                        "\t<studio>" + this.getStudio() + "</studio>\n" +
+                        "\t<author>" + this.getAuthor() + "</author>\n" +
+                        "\t<duration>" + this.getDuration() + "</duration>\n" +
                         "</book>"
         );
     }
