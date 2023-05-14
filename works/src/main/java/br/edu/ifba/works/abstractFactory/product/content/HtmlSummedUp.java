@@ -1,24 +1,22 @@
 package br.edu.ifba.works.abstractFactory.product.content;
 
-public class SummedUp implements ContentModel {
+import br.edu.ifba.works.factoryMethod.product.Works;
+
+public class HtmlSummedUp implements ContentModel {
     private String title;
     private String author;
     private Integer year;
 
-    public SummedUp(){}
+    public HtmlSummedUp(){}
 
-    public SummedUp(String title, String author, Integer year) {
-        this.title = title;
-        this.author = author;
-        this.year = year;
+    public HtmlSummedUp(Works works) {
+        this.title = works.getTitle();
+        this.author = null;
+        this.year = works.getYear();
     }
 
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getAuthor() {
@@ -32,11 +30,6 @@ public class SummedUp implements ContentModel {
     public Integer getYear() {
         return year;
     }
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
 
     @Override
     public String buildingContent() {

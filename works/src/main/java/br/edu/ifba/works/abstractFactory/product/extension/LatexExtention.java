@@ -10,12 +10,12 @@ public class LatexExtention implements ContentExtention {
 
     @Override
     public void buildingStruture(List<ContentModel> contentModels) {
-        System.out.println("Building LaTex...");
+        System.out.println("Building LaTex...\n");
         this.print(contentModels);
     }
 
     private void print(List<ContentModel> contentModels){
         for (var content: contentModels)
-            System.out.println(content.buildingContent());
+            System.out.print(content.buildingContent());
     }
 }

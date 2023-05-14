@@ -2,7 +2,9 @@ package br.edu.ifba.works;
 
 import br.edu.ifba.works.abstractFactory.factory.AlbumHtmlCompleteContreteFactory;
 import br.edu.ifba.works.abstractFactory.factory.ConfigurationAbstractFactory;
-import br.edu.ifba.works.abstractFactory.product.content.AlbumComplete;
+import br.edu.ifba.works.abstractFactory.factory.HtmlSummedUpContreteFactory;
+import br.edu.ifba.works.abstractFactory.product.content.AlbumHtmlComplete;
+import br.edu.ifba.works.abstractFactory.product.content.HtmlSummedUp;
 import br.edu.ifba.works.factoryMethod.creator.WorksCreator;
 import br.edu.ifba.works.factoryMethod.product.Album;
 import br.edu.ifba.works.factoryMethod.product.Book;
@@ -25,11 +27,18 @@ public class Demo {
         System.out.println("Initializer...");
         runBusinessLogicQ1();
         runBusinessLogicQ2();
-        System.out.println("Finished!");
+        System.out.println("\nFinished!");
     }
 
-    private static void runBusinessLogicQ1() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        System.out.println("Factory method in execution...");
+    private static void runBusinessLogicQ1()
+            throws IOException,
+            ClassNotFoundException,
+            InvocationTargetException,
+            InstantiationException,
+            IllegalAccessException,
+            NoSuchMethodException
+    {
+        System.out.println("Factory method in execution...\n");
 
         WorksCreator creator = WorksCreator.getEquipmentWithProp("Book");
         Works product = creator.getWorks("Title", 2030, 20.00);
@@ -40,11 +49,19 @@ public class Demo {
         book.setAuthor("XPTO Author");
         book.setPageNumbers(30);
         book.toXML();
+        System.out.println();
         book.toJSON();
     }
 
-    private static void runBusinessLogicQ2() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        System.out.println("Abstract factory in execution...");
+    private static void runBusinessLogicQ2()
+            throws IOException,
+            ClassNotFoundException,
+            InvocationTargetException,
+            InstantiationException,
+            IllegalAccessException,
+            NoSuchMethodException
+    {
+        System.out.println("\nAbstract factory in execution...");
 
         WorksCreator creator = WorksCreator.getEquipmentWithProp("Album");
         Works product = creator.getWorks("Title", 2030, 20.00);
@@ -56,9 +73,17 @@ public class Demo {
         album.setDuration(30.0);
 
         ConfigurationAbstractFactory conf = new AlbumHtmlCompleteContreteFactory();
-        var dataContent = (AlbumComplete) conf.createContentModel(album);
+        var dataContentAlbumHtml = (AlbumHtmlComplete) conf.createContentModel(album);
         var dataExtention = conf.createContentExtention();
-        dataExtention.buildingStruture(List.of(dataContent));
+        dataExtention.buildingStruture(List.of(dataContentAlbumHtml));
+
+        System.out.println();
+
+        conf = new HtmlSummedUpContreteFactory();
+        var dataContentAlbumHtmlSummedUp = (HtmlSummedUp) conf.createContentModel(album);
+        dataContentAlbumHtmlSummedUp.setAuthor(album.getAuthor());
+        dataExtention = conf.createContentExtention();
+        dataExtention.buildingStruture(List.of(dataContentAlbumHtmlSummedUp));
 
     }
 }

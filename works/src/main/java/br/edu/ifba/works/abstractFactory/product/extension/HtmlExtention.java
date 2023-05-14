@@ -9,12 +9,12 @@ public class HtmlExtention implements ContentExtention {
     public HtmlExtention() {}
     @Override
     public void buildingStruture(List<ContentModel> contentModels) {
-        System.out.println("Building HTML...");
+        System.out.println("Building HTML...\n");
         this.print(contentModels);
     }
 
     private void print(List<ContentModel> contentModels){
-        System.out.println(
+        System.out.print(
             """
             <HTML>
             <HEAD></HEAD>
@@ -22,7 +22,7 @@ public class HtmlExtention implements ContentExtention {
             """
         );
         for (var content: contentModels)
-            System.out.println(content.buildingContent());
+            System.out.print(content.buildingContent());
 
         System.out.println("</BODY> ");
     }
