@@ -1,34 +1,14 @@
 package br.edu.ifba.works.abstractFactory.product.content;
 
+import br.edu.ifba.works.abstractFactory.product.Markdown;
 import br.edu.ifba.works.factoryMethod.product.Works;
 
-public class HtmlSummedUp implements ContentModel {
-    private String title;
-    private String author;
-    private Integer year;
+public class HtmlSummedUp extends Markdown implements ContentModel {
 
-    public HtmlSummedUp(){}
+    public HtmlSummedUp() {}
 
     public HtmlSummedUp(Works works) {
-        this.title = works.getTitle();
-        this.author = null;
-        this.year = works.getYear();
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public Integer getYear() {
-        return year;
+        super(works);
     }
 
     @Override

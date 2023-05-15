@@ -1,12 +1,18 @@
 package br.edu.ifba.works.abstractFactory.product.extension;
 
+import br.edu.ifba.works.abstractFactory.product.Markdown;
 import br.edu.ifba.works.abstractFactory.product.content.ContentModel;
+import br.edu.ifba.works.factoryMethod.product.Works;
 
 import java.util.List;
 
-public class HtmlExtention implements ContentExtention {
+public class HtmlExtension extends Markdown implements ContentExtension {
 
-    public HtmlExtention() {}
+    public HtmlExtension() {}
+
+    public HtmlExtension(Works works) {
+        super(works);
+    }
     @Override
     public void buildingStruture(List<ContentModel> contentModels) {
         System.out.println("Building HTML...\n");
@@ -26,4 +32,5 @@ public class HtmlExtention implements ContentExtention {
 
         System.out.println("</BODY> ");
     }
+
 }

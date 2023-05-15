@@ -40,7 +40,7 @@ public class Demo {
     {
         System.out.println("Factory method in execution...\n");
 
-        WorksCreator creator = WorksCreator.getEquipmentWithProp("Book");
+        WorksCreator creator = WorksCreator.getWorksWithProp("Book");
         Works product = creator.getWorks("Title", 2030, 20.00);
 
         var book = (Book) product;
@@ -63,7 +63,7 @@ public class Demo {
     {
         System.out.println("\nAbstract factory in execution...");
 
-        WorksCreator creator = WorksCreator.getEquipmentWithProp("Album");
+        WorksCreator creator = WorksCreator.getWorksWithProp("Album");
         Works product = creator.getWorks("Title Album", 2030, 20.00);
 
         var album = (Album) product;

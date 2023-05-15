@@ -1,12 +1,18 @@
 package br.edu.ifba.works.abstractFactory.product.extension;
 
+import br.edu.ifba.works.abstractFactory.product.Markdown;
 import br.edu.ifba.works.abstractFactory.product.content.ContentModel;
+import br.edu.ifba.works.factoryMethod.product.Works;
 
 import java.util.List;
 
-public class LatexExtention implements ContentExtention {
+public class LatexExtension extends Markdown implements ContentExtension {
 
-    public LatexExtention() {}
+    public LatexExtension() {}
+
+    public LatexExtension(Works works) {
+        super(works);
+    }
 
     @Override
     public void buildingStruture(List<ContentModel> contentModels) {

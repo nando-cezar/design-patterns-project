@@ -1,13 +1,11 @@
 package br.edu.ifba.works.abstractFactory.product.content;
 
+import br.edu.ifba.works.abstractFactory.product.Markdown;
 import br.edu.ifba.works.factoryMethod.product.Album;
 import br.edu.ifba.works.factoryMethod.product.Works;
 
-public class AlbumHtmlComplete implements ContentModel {
+public class AlbumHtmlComplete extends Markdown implements ContentModel {
 
-    private String title;
-    private String author;
-    private Integer year;
     private String recordCompany;
     private String studio;
     private Double score;
@@ -15,26 +13,12 @@ public class AlbumHtmlComplete implements ContentModel {
     public AlbumHtmlComplete() {}
 
     public AlbumHtmlComplete(Works works) {
+        super(works);
         var album = (Album) works;
-        this.title = album.getTitle();
-        this.author = album.getAuthor();
-        this.year = album.getYear();
         this.recordCompany = album.getRecordCompany();
         this.studio = album.getStudio();
         this.score = album.getScore();
         this.duration = album.getDuration();
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public Integer getYear() {
-        return year;
     }
 
     public String getRecordCompany() {

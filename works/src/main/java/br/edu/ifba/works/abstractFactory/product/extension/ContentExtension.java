@@ -4,6 +4,6 @@ import br.edu.ifba.works.abstractFactory.product.content.ContentModel;
 
 import java.util.List;
 
-public interface ContentExtention {
+public interface ContentExtension {
     void buildingStruture(List<ContentModel> contentModels);
 }

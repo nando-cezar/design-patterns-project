@@ -1,42 +1,15 @@
 package br.edu.ifba.works.abstractFactory.product.content;
 
-public class LatexSummedUp implements ContentModel {
-    private String title;
-    private String author;
-    private Integer year;
+import br.edu.ifba.works.abstractFactory.product.Markdown;
+import br.edu.ifba.works.factoryMethod.product.Works;
 
-    public LatexSummedUp(){}
+public class LatexSummedUp extends Markdown implements ContentModel {
 
-    public LatexSummedUp(String title, String author, Integer year) {
-        this.title = title;
-        this.author = author;
-        this.year = year;
+    public LatexSummedUp() {}
+
+    public LatexSummedUp(Works works) {
+        super(works);
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
     @Override
     public String buildingContent() {
         return "% " + this.getTitle() + "\n" +

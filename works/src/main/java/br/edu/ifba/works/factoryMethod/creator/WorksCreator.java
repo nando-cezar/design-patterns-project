@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public abstract class WorksCreator {
 
-    private static String loadConf(String name) throws FileNotFoundException, IOException {
+    private static String loadConf(String name) throws IOException {
         Properties prop = new Properties();
         prop.load(new FileInputStream("src/main/resources/factory.conf"));
         for(Object key : prop.keySet())
@@ -20,7 +20,16 @@ public abstract class WorksCreator {
         return null;
     }
 
-    public static WorksCreator getEquipmentWithProp(String name) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, ClassNotFoundException, FileNotFoundException, IOException {
+    public static WorksCreator getWorksWithProp(String name)
+            throws InstantiationException,
+            IllegalAccessException,
+            IllegalArgumentException,
+            InvocationTargetException,
+            NoSuchMethodException,
+            SecurityException,
+            ClassNotFoundException,
+            IOException
+    {
         String className = loadConf(name);
         return (WorksCreator)
                 Class.forName(className)
