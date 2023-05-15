@@ -16,4 +16,5 @@ public class LatexSummedUp extends Markdown implements ContentModel {
                 "\"textbf {" + this.getTitle() + "}\n" +
                 "\"emph {" + this.getAuthor() + " (" + this.getYear() + ")}\n";
     }
+
 }

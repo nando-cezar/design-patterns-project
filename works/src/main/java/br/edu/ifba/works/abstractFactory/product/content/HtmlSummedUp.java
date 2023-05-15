@@ -17,4 +17,5 @@ public class HtmlSummedUp extends Markdown implements ContentModel {
                 "<bold>" + this.getTitle() + "</bold>\n" +
                 "<italic>" + this.getAuthor() + " " + this.getYear() + "</italic>\n";
     }
+
 }

@@ -62,4 +62,5 @@ public class AlbumLatexComplete extends Markdown implements ContentModel {
                 "Duration: " + this.getDuration() + "\n" +
                 "Score: " + this.getScore() + "\n";
     }
+
 }

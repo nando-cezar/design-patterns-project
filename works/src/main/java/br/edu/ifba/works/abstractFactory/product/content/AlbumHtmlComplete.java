@@ -62,4 +62,5 @@ public class AlbumHtmlComplete extends Markdown implements ContentModel {
                 "Duration: " + this.getDuration() + "\n" +
                 "Score: " + this.getScore() + "\n";
     }
+
 }

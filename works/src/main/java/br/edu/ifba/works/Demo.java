@@ -107,8 +107,6 @@ public class Demo {
         conf = new LatexSummedUpContreteFactory();
         var dataContentAlbumLatexSummedUp = (LatexSummedUp) conf.createContentModel(album);
         dataContentAlbumLatexSummedUp.setAuthor(album.getAuthor());
-        dataContentAlbumLatexSummedUp.setTitle(album.getTitle());
-        dataContentAlbumLatexSummedUp.setYear(album.getYear());
         dataExtention = conf.createContentExtention();
         dataExtention.buildingStruture(List.of(dataContentAlbumLatexSummedUp));
 

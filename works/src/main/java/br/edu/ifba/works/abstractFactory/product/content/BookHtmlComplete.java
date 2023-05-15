@@ -52,4 +52,5 @@ public class BookHtmlComplete extends Markdown implements ContentModel {
                 "Page numbers: " + this.getPageNumbers() + "\n" +
                 "Score: " + this.getScore() + "\n";
     }
+
 }
