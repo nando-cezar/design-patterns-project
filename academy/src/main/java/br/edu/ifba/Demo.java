@@ -1,6 +1,6 @@
 package br.edu.ifba;
 
-import br.edu.ifba.academy.builder.concrete.ExercicesConcreteBuilder;
+import br.edu.ifba.academy.builder.concrete.ExercisesConcreteBuilder;
 import br.edu.ifba.academy.builder.director.ExercisesDirector;
 import br.edu.ifba.academy.singleton.DumbbellSingleton;
 import br.edu.ifba.academy.singleton.EquipmentSingleton;
@@ -55,7 +55,7 @@ public class Demo {
     private static void runBusinessLogicQ2() {
         System.out.println("Builder in execution...");
         ExercisesDirector director = new ExercisesDirector();
-        ExercicesConcreteBuilder concreteBuilder = new ExercicesConcreteBuilder();
+        ExercisesConcreteBuilder concreteBuilder = new ExercisesConcreteBuilder();
         director.constructEquiment(concreteBuilder);
         System.out.println(concreteBuilder.builder());
     }
