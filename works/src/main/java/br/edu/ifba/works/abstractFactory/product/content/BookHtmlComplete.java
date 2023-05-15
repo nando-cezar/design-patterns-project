@@ -23,12 +23,24 @@ public class BookHtmlComplete extends Markdown implements ContentModel {
         return publishingCompany;
     }
 
-    public Double getScore() {
-        return score;
+    public void setPublishingCompany(String publishingCompany) {
+        this.publishingCompany = publishingCompany;
     }
 
     public Integer getPageNumbers() {
         return pageNumbers;
+    }
+
+    public void setPageNumbers(Integer pageNumbers) {
+        this.pageNumbers = pageNumbers;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     @Override

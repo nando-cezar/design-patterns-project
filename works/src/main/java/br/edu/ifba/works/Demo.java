@@ -76,6 +76,10 @@ public class Demo {
 
         conf = new AlbumHtmlCompleteContreteFactory();
         var dataContentAlbumHtml = (AlbumHtmlComplete) conf.createContentModel(album);
+        dataContentAlbumHtml.setAuthor(album.getAuthor());
+        dataContentAlbumHtml.setRecordCompany(album.getRecordCompany());
+        dataContentAlbumHtml.setDuration(album.getDuration());
+        dataContentAlbumHtml.setScore(album.getScore());
         var dataExtention = conf.createContentExtention();
         dataExtention.buildingStruture(List.of(dataContentAlbumHtml));
 
@@ -91,6 +95,10 @@ public class Demo {
 
         conf = new AlbumLatexCompleteContreteFactory();
         var dataContentAlbumLatex = (AlbumLatexComplete) conf.createContentModel(album);
+        dataContentAlbumLatex.setAuthor(album.getAuthor());
+        dataContentAlbumLatex.setRecordCompany(album.getRecordCompany());
+        dataContentAlbumLatex.setDuration(album.getDuration());
+        dataContentAlbumLatex.setScore(album.getScore());
         dataExtention = conf.createContentExtention();
         dataExtention.buildingStruture(List.of(dataContentAlbumLatex));
 

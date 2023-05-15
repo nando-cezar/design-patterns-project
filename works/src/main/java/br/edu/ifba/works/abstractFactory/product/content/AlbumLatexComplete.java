@@ -25,16 +25,32 @@ public class AlbumLatexComplete extends Markdown implements ContentModel {
         return recordCompany;
     }
 
+    public void setRecordCompany(String recordCompany) {
+        this.recordCompany = recordCompany;
+    }
+
     public String getStudio() {
         return studio;
+    }
+
+    public void setStudio(String studio) {
+        this.studio = studio;
     }
 
     public Double getScore() {
         return score;
     }
 
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
     public Double getDuration() {
         return duration;
+    }
+
+    public void setDuration(Double duration) {
+        this.duration = duration;
     }
 
     @Override
