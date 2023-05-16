@@ -10,7 +10,7 @@ public class ExercisesDirector {
 
     public void constructEquiment(ExercisesBuilder builder){
         builder
-                .newInstance()
+                .reset()
                 .setDescription("Description builder")
                 .setType(List.of(Type.Mobilidade))
                 .setMuscleGroup(List.of("Muscle Group I", "Muscle Group II"));

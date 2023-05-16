@@ -5,15 +5,18 @@ import br.edu.ifba.academy.builder.product.Type;
 
 import java.util.List;
 
-public class ExercicesConcreteBuilder implements ExercisesBuilder {
+public class ExercisesConcreteBuilder implements ExercisesBuilder {
 
     private String description;
     private List<Type> type;
     private List<String> muscleGroup;
 
     @Override
-    public ExercisesBuilder newInstance() {
-        return new ExercicesConcreteBuilder();
+    public ExercisesBuilder reset() {
+       this.description = null;
+       this.type = null;
+       this.muscleGroup = null;
+       return this;
     }
 
     @Override

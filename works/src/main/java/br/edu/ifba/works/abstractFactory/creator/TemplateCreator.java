@@ -58,7 +58,6 @@ public abstract class TemplateCreator {
         var data = creator.createTemplates();
         data.setTitle(product.getTitle());
         data.setYear(product.getYear());
-        data.setAuthor(null);
         return data;
     }
 
