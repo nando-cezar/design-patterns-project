@@ -21,7 +21,7 @@ public class Main {
     private static void q1(){
         TipoProduto tipo = TipoProduto.Livro;
         var creator = tipo.getConcreteCreator();
-        var produto = creator.createProduto("1", "Produto 01");
+        var produto = creator.getProduto("1", "Produto 01");
         System.out.println(produto.getNome());
     }
 
