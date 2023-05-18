@@ -8,6 +8,7 @@ public class Alimento {
     public Alimento(String nome, QuantidadeMacro quantidadeMacro) {
         this.nome = nome;
         this.quantidadeMacro = quantidadeMacro;
+
     }
 
     public String getNome() {
