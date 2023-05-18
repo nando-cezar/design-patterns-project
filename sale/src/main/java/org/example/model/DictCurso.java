@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class DictCurso {
 
-    private Map<String, Produto> controladores = new HashMap();
+    private final Map<String, Produto> controladores = new HashMap<>();
     private static DictCurso dicionario = null;
 
     public static DictCurso instance() {

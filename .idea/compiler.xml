@@ -9,6 +9,7 @@
         <module name="academy-v2" />
         <module name="sale" />
         <module name="works" />
+        <module name="nutrient" />
       </profile>
     </annotationProcessing>
   </component>
