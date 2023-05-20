@@ -10,6 +10,7 @@
         <module name="sale" />
         <module name="works" />
         <module name="nutrient" />
+        <module name="store" />
       </profile>
     </annotationProcessing>
   </component>
