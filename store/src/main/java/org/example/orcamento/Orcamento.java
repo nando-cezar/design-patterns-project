@@ -1,7 +1,7 @@
-package org.example.model;
+package org.example.orcamento;
 
-import org.example.model.situacao.EmAnalise;
-import org.example.model.situacao.SituacaoOrcamento;
+import org.example.situacao.EmAnalise;
+import org.example.situacao.SituacaoOrcamento;
 
 import java.math.BigDecimal;
 

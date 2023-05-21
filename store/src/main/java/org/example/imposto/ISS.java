@@ -1,10 +1,10 @@
-package org.example.strategy.imposto;
+package org.example.imposto;
 
-import org.example.model.Orcamento;
+import org.example.orcamento.Orcamento;
 
 import java.math.BigDecimal;
 
-public class ISS implements TipoImposto{
+public class ISS implements TipoImposto {
     @Override
     public BigDecimal calcularImposto(Orcamento orcamento) {
         return orcamento.getValor().multiply(new BigDecimal("0.1"));

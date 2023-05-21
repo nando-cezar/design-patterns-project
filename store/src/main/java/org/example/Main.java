@@ -1,12 +1,16 @@
 package org.example;
 
-import org.example.cr_tm.desconto.CalculadoraDeDescontos;
-import org.example.model.situacao.Aprovar;
-import org.example.strategy.imposto.CalculadoraImposto;
-import org.example.strategy.imposto.INSS;
-import org.example.strategy.imposto.ISS;
-import org.example.strategy.imposto.TipoImposto;
-import org.example.model.Orcamento;
+import org.example.desconto.CalculadoraDeDescontos;
+import org.example.imposto.CalculadoraImposto;
+import org.example.imposto.INSS;
+import org.example.imposto.ISS;
+import org.example.imposto.TipoImposto;
+import org.example.orcamento.Orcamento;
+import org.example.pedido.GeraPedido;
+import org.example.pedido.GerarPedidoHandler;
+import org.example.pedido.acao.EnviarEmailPedido;
+import org.example.pedido.acao.SalvarPedidoNoBancoDeDados;
+import org.example.situacao.Aprovar;
 
 import java.math.BigDecimal;
 
@@ -15,6 +19,7 @@ public class Main {
         imposto();
         desconto();
         situacao();
+        pedidos();
     }
 
     private static void imposto(){
@@ -50,6 +55,16 @@ public class Main {
         orcamento.aplicarDescontoExtra();
         System.out.println(orcamento.getValor());
         orcamento.finalizar();
+        System.out.println("Finish!");
+    }
+
+    private static void pedidos(){
+        System.out.println("Initializer...");
+        GeraPedido gerador = new GeraPedido("Cliente XPTO", new BigDecimal("200"), 6);
+        GerarPedidoHandler handler = new GerarPedidoHandler();
+        handler.addAcao(new SalvarPedidoNoBancoDeDados());
+        handler.addAcao(new EnviarEmailPedido());
+        handler.executa(gerador);
         System.out.println("Finish!");
     }
 }

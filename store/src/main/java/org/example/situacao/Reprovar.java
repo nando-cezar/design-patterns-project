@@ -1,9 +1,6 @@
-package org.example.model.situacao;
+package org.example.situacao;
 
-import org.example.model.Orcamento;
-import org.example.model.situacao.SituacaoOrcamento;
-
-import java.math.BigDecimal;
+import org.example.orcamento.Orcamento;
 
 public class Reprovar extends SituacaoOrcamento {
 

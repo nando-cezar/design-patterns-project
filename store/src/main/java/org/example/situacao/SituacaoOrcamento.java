@@ -1,6 +1,6 @@
-package org.example.model.situacao;
+package org.example.situacao;
 
-import org.example.model.Orcamento;
+import org.example.orcamento.Orcamento;
 
 import java.math.BigDecimal;
 

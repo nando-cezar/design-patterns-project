@@ -1,6 +1,6 @@
-package org.example.cr_tm.desconto;
+package org.example.desconto;
 
-import org.example.model.Orcamento;
+import org.example.orcamento.Orcamento;
 
 import java.math.BigDecimal;
 
